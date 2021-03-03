@@ -8,6 +8,9 @@ To obtain the necessary html file, you need to save the "source code" of a chapt
 
 For easiest use it's recommended to save this html file in the same directory where you have saved `convertHTMLtoJSON.py`. Next, you need to open `convertHTMLtoJSON.py` and edit the variable `htmlName` to point at your html file. Finally, you can run the Python script and it should save a json file to the same directory.
 
+## Limitations
+As mentioned above, this Python script creates json files that can be imported into Foundry VTT as Journal Entries. It does not support the conversion of player characters, monsters, items, or spells.
+
 ## Dependencies
 * `codecs` module
 * `json` module
