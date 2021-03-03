@@ -5,16 +5,16 @@ from bs4 import BeautifulSoup
 
 # Html attributes to be removed
 remove_attributes = ['name','lang','language','onmouseover','script','style',
-					'font','dir','face','size','color','style','class',
-					'width','height','hspace','border','valign','background',
-					'bgcolor','text','link','vlink','alink','cellpadding',
-					'cellspacing', 'data-content-chunk-id','alt','src',
-					'data-tooltip-href','href','id','title','data-href',
-					'data-layout','data-next-link','data-prev-link',
-					'data-next-title']
+	'font','dir','face','size','color','style','class',
+	'width','height','hspace','border','valign','background',
+	'bgcolor','text','link','vlink','alink','cellpadding',
+	'cellspacing', 'data-content-chunk-id','alt','src',
+	'data-tooltip-href','href','id','title','data-href',
+	'data-layout','data-next-link','data-prev-link',
+	'data-next-title']
 
 # Name of html file to be converted to a journal entry
-htmlName = "html/Wyllowwood - Waterdeep_ Dungeon of the Mad Mage - Sources - D&D Beyond.html"
+htmlName = "example.html"
 
 htmlFile = codecs.open(htmlName,'r')
 htmlData = htmlFile.read()
@@ -87,21 +87,21 @@ h1EndIndex = str(soup.html)[h1StartIndex:].find("</h1>") + h1StartIndex
 journalName = str(soup.html)[h1StartIndex:h1EndIndex]
 
 # Prepare json format for saving results
-jsonFormat = {	"name": journalName,
-				"sort": 260000, 
-				"flags": {
-					"exportSource": {
-						"world": "example-world", 
-						"system": "dnd5e", 
-						"coreVersion": 
-						"0.7.9", 
-						"systemVersion": "1.2.0"
-						}
-					}, 
-				"content": output,
-				"_id": "JKs46PwKkpTZamrS"
-			}
+jsonFormat = {
+	"name": journalName,
+	"sort": 260000, 
+	"flags": {
+		"exportSource": {
+			"world": "example-world", 
+			"system": "dnd5e", 
+			"coreVersion": 
+			"0.7.9", 
+			"systemVersion": "1.2.0"
+		}
+	}, 
+	"content": output,
+	"_id": "JKs46PwKkpTZamrS"
+}
 # Save converted html to a json file
 with open(journalName.replace(':','') + '.json','w') as jsonFile:
 	json.dump(jsonFormat, jsonFile)
-
