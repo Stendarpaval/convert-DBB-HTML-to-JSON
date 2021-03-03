@@ -1,5 +1,5 @@
 # Convert DBB HTML to JSON
-A python script that converts the contents of a fully downloaded DDB html page into a json file that can be imported as a Journal Entry in Foundry VTT.
+A Python script that converts the contents of a fully downloaded DDB html page into a json file that can be imported as a Journal Entry in Foundry VTT.
 
 ## User instructions
 To obtain the necessary html file, you need to save the "source code" of a chapter of a DBB adventure that you own. In Safari on MacOS this can be done through navigating Safari's menu bar as follows:
